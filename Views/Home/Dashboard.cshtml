@@ -1,0 +1,38 @@
+
+<nav class=" d-flex justify-content-between">
+    <div>
+        <h1>Welcome, @Context.Session.GetString("Username") !</h1>
+    </div>
+    <div>
+        <form asp-action="reset" method="post">
+            <input type="submit" value="Log out" class="btn btn-danger">
+        </form>
+    </div>
+</nav>
+<div class="text-center">
+    <h1 class="display">@Context.Session.GetInt32("Display")</h1>
+    <div class="d-flex justify-content-center col-4 mx-auto p-4">
+            <form action="process/add" method="post">
+                <div class="mb-3">
+                    <input type="submit" value="+ 1" class="btn btn-info btn-lg">
+                </div>
+            </form>
+            <form action="process/sub" method="post">
+                <div class="ms-3 mb-3">
+                    <input type="submit" value="- 1" class="btn btn-success btn-lg">
+                </div>
+            </form>
+        </div>
+        <div class="d-flex justify-content-center">
+            <form action="process/mult" method="post">
+                <div class="mb-3">
+                    <input type="submit" value="x 2" class="btn btn-danger btn-lg">
+                </div>
+             </form>
+             <form action="process/rnd"  method="post">
+                <div class="ms-3 mb-3">
+                    <input type="submit" value="+ Rnd" class="btn btn-warning btn-lg">
+                </div>
+             </form>
+    </div>
+</div>
